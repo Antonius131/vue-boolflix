@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MainHeader />
+    <MainHeader @search="getSearch"/>
     <MainContent />
   </div>
 </template>
@@ -14,7 +14,15 @@ export default {
   components: {
     MainHeader,
     MainContent
-}
+  },
+  data: function() {
+
+  },
+  methods: {
+    getSearch() {
+      
+    }
+  }
 }
 </script>
 
