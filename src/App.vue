@@ -20,18 +20,26 @@ export default {
   data: function() {
     return {
       moviesList: [],
-      itLang: '',
-      enLang: ''
+      movieUrl: 'https://api.themoviedb.org/3/search/movie?api_key=e575f76f59f9dd45a7033ae7e19eb74d&include_adult=false&query=',
+      tvShowsUrl: 'https://api.themoviedb.org/3/search/tv?api_key=e575f76f59f9dd45a7033ae7e19eb74d&linclude_adult=false&query='
     }
   },
   methods: {
     getSearch(value) {
       const queryValue = value;
-      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=e575f76f59f9dd45a7033ae7e19eb74d&language=en-US&include_adult=false&query=${queryValue}`)
-      .then((result) => {
-        this.moviesList = result.data.results;
-        console.log(this.moviesList);
+      let searchedMovies;
+      let searchedSeries;
 
+      axios.get(`${this.movieUrl}${queryValue}`)
+      .then((result) => {
+        searchedMovies = result.data.results;
+        console.log(searchedMovies);
+      });
+
+      axios.get(`${this.tvShowsUrl}${queryValue}`)
+      .then((result) => {
+        searchedSeries = result.data.results;
+        console.log(searchedSeries);
       });
     }
   }
