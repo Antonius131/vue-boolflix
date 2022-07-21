@@ -2,7 +2,7 @@
    <header>
       <div class="user-search">
          <input class="search-bar" placeholder="Ricerca" v-model="searchValue" >
-         <button class="btn" type="submit">Cerca</button>
+         <button class="btn" type="submit" @click="$emit('search', searchValue)">Cerca</button>
       </div>
    </header>
 </template>
