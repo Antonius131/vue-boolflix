@@ -3,7 +3,15 @@
     <ul>
       <li>{{ title }}</li>
       <li>{{ originalTitle }}</li>
-      <li>{{ language }}</li>
+      <div class="lang-img" v-if="language === 'it'">
+        <img src="../assets/img/it-flag.png" :alt="language">
+      </div>
+      <div class="lang-img" v-else-if="language === 'en'">
+        <img src="../assets/img/uk-flag.png" :alt="language">
+      </div>
+      <div class="lang-img" v-else>
+        <img src="" alt="no-flag">
+      </div>
       <li>{{ vote }}</li>
     </ul>
   </div>
@@ -22,6 +30,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  img {
+    height: 12px;
+  }
 </style>
