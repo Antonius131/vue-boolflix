@@ -1,6 +1,6 @@
 <template>
    <main>
-      <MoviesList  />
+      <MoviesList v-for="(movie, index) in movies" :key="index" />
    </main>
 </template>
 
