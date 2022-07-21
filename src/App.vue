@@ -28,7 +28,6 @@ export default {
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=e575f76f59f9dd45a7033ae7e19eb74d&language=en-US&include_adult=false&query=${queryValue}`)
       .then((result) => {
         this.moviesList = result.data.results;
-        console.log(this.moviesList)
       });
     }
   }

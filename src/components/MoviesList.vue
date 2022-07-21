@@ -1,15 +1,23 @@
 <template>
   <div class="card">
-    <ElementCard />
+    <ul>
+      <li>{{ title }}</li>
+      <li>{{ originalTitle }}</li>
+      <li>{{ language }}</li>
+      <li>{{ vote }}</li>
+    </ul>
   </div>
 </template>
 
 <script>
-import ElementCard from './ElementCard.vue';
+
 
 export default {
-  components: { 
-    ElementCard 
+  props: {
+    'title': String,
+    'originalTitle': String,
+    'language': String,
+    'vote': Number
   }
 }
 </script>
