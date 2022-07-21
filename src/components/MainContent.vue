@@ -1,6 +1,6 @@
 <template>
    <main>
-      <MoviesList />
+      <MoviesList  />
    </main>
 </template>
 
@@ -9,6 +9,12 @@ import MoviesList from './MoviesList.vue';
 export default {
    components: { 
       MoviesList 
+   },
+   props: {
+      'movies': {
+         required: true,
+         type: Array,
+      }
    }
 }
 </script>

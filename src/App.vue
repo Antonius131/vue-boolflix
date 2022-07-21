@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <MainHeader @search="getSearch"/>
-    <MainContent />
+    <MainContent 
+      :movies="moviesList"/>
   </div>
 </template>
 
