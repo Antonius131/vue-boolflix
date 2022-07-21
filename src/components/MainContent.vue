@@ -1,5 +1,7 @@
 <template>
-  <MoviesList />
+   <main>
+      <MoviesList />
+   </main>
 </template>
 
 <script>

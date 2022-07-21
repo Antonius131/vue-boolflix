@@ -1,10 +1,16 @@
 <template>
-  <div></div>
+  <div class="wrapper">
+    <ElementCard />
+  </div>
 </template>
 
 <script>
-export default {
+import ElementCard from './ElementCard.vue';
 
+export default {
+  components: { 
+    ElementCard 
+  }
 }
 </script>
 
