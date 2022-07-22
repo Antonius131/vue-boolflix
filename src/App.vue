@@ -20,22 +20,23 @@ export default {
   },
   data: function() {
     return {
+      apiKey: 'e575f76f59f9dd45a7033ae7e19eb74d',
+      movieUrl: 'https://api.themoviedb.org/3/search/movie',
+      tvShowsUrl: 'https://api.themoviedb.org/3/search/tv',
       moviesList: [],
-      tvShowsList: [],
-      movieUrl: 'https://api.themoviedb.org/3/search/movie?api_key=e575f76f59f9dd45a7033ae7e19eb74d&include_adult=false&query=',
-      tvShowsUrl: 'https://api.themoviedb.org/3/search/tv?api_key=e575f76f59f9dd45a7033ae7e19eb74d&linclude_adult=false&query='
+      tvShowsList: []
     }
   },
   methods: {
     getSearch(value) {
       const queryValue = value;
-      axios.get(`${this.movieUrl}${queryValue}`)
+      axios.get(`${this.movieUrl}?api_key=${this.apiKey}&query=${queryValue}`)
       .then((result) => {
         this.moviesList = result.data.results;
         console.log(this.moviesList);
       });
 
-      axios.get(`${this.tvShowsUrl}${queryValue}`)
+      axios.get(`${this.tvShowsUrl}?api_key=${this.apiKey}&query=${queryValue}`)
       .then((result) => {
         this.tvShowsList = result.data.results;
         console.log(this.tvShowsList);
