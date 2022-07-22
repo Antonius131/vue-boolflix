@@ -6,14 +6,8 @@
     <div class="poster-caption">
       <h4>{{ showTitle }}</h4>
       <p>{{ showOriginalTitle }}</p>
-      <div class="lang-img" v-if="showLanguage === 'it'">
-        <img src="../assets/img/it-flag.png" :alt="showLanguage">
-      </div>
-      <div class="lang-img" v-else-if="showLanguage === 'en'">
-        <img src="../assets/img/uk-flag.png" :alt="showLanguage">
-      </div>
-      <div class="lang-img" v-else>
-        <img src="" alt="no-flag">
+      <div class="lang-img">
+        <country-flag :country='showLanguage' size='small'/>
       </div>
       <div class="show-rating" >
         <i class="fa-solid fa-star" v-for="vote in roundedtvShowVote()" :key="vote"></i>
@@ -23,26 +17,31 @@
 </template>
 
 <script>
+import CountryFlag from 'vue-country-flag';
+
 export default {
-    props: {
-      'showTitle': String,
-      'showOriginalTitle': String,
-      'showLanguage': String,
-      'showVote': Number,
-      'posterPath': String
-    },
-    data: function() {
-      return {
-        imgPath: 'https://image.tmdb.org/t/p',
-        imgDimension: 'w342'
-      }
-    },
-    methods: {
-      roundedtvShowVote() {
-        const roundedtvShowVote = Math.round(this.showVote / 2);
-        return roundedtvShowVote;
-      }
+  components: {
+    CountryFlag
+  },
+  props: {
+    'showTitle': String,
+    'showOriginalTitle': String,
+    'showLanguage': String,
+    'showVote': Number,
+    'posterPath': String
+  },
+  data: function() {
+    return {
+      imgPath: 'https://image.tmdb.org/t/p',
+      imgDimension: 'w342'
     }
+  },
+  methods: {
+    roundedtvShowVote() {
+      const roundedtvShowVote = Math.round(this.showVote / 2);
+      return roundedtvShowVote;
+    }
+  }
 }
 </script>
 

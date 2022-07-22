@@ -6,14 +6,8 @@
     <div class="poster-caption">
       <h3>{{ title }}</h3>
       <p>{{ originalTitle }}</p>
-      <div class="lang-img" v-if="language === 'it'">
-        <img src="../assets/img/it-flag.png" :alt="language">
-      </div>
-      <div class="lang-img" v-else-if="language === 'en'">
-        <img src="../assets/img/uk-flag.png" :alt="language">
-      </div>
-      <div class="lang-img" v-else>
-        <img src="" alt="no-flag">
+      <div class="lang-img">
+        <country-flag :country='language' size='small'/>
       </div>
       <div class="movie-rating">
         <i class="fa-solid fa-star" v-for="vote in roundedMovieVote()" :key="vote"></i>
@@ -23,8 +17,12 @@
 </template>
 
 <script>
+import CountryFlag from 'vue-country-flag';
 
 export default {
+  components: {
+    CountryFlag
+  },
   props: {
     'title': String,
     'originalTitle': String,
