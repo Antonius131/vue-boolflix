@@ -13,13 +13,16 @@
       <div class="lang-img" v-else>
         <img src="" alt="no-flag">
       </div>
-      <li>{{ `${roundedMovieVote()}` }}</li>
+      <div class="movie-rating">
+        <li v-for="vote in roundedMovieVote()" :key="vote">
+          <i class="fa-solid fa-star"></i>
+        </li>
+      </div>
     </ul>
   </div>
 </template>
 
 <script>
-
 
 export default {
   props: {
@@ -39,6 +42,7 @@ export default {
     roundedMovieVote() {
         const movieVote = this.vote;
         const roundedMovieVote = Math.round(movieVote / 2);
+
         return roundedMovieVote;
     }
   }

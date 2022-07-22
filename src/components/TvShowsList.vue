@@ -13,7 +13,11 @@
       <div class="lang-img" v-else>
         <img src="" alt="no-flag">
       </div>
-      <li>{{ `${roundedtvShowVote()}` }}</li>
+      <div class="show-rating">
+        <li v-for="vote in roundedtvShowVote()" :key="vote">
+          <i class="fa-solid fa-star"></i>
+        </li>
+      </div>rating
     </ul>
    </div>
 </template>
