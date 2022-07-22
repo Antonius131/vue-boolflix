@@ -13,7 +13,7 @@
       <div class="lang-img" v-else>
         <img src="" alt="no-flag">
       </div>
-      <li>{{ vote }}</li>
+      <li>{{ `${roundedMovieVote()}` }}</li>
     </ul>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
     roundedMovieVote() {
         const movieVote = this.vote;
         const roundedMovieVote = Math.round(movieVote / 2);
-        console.log(roundedMovieVote);
+        return roundedMovieVote;
     }
   }
 }
