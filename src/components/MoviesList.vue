@@ -15,8 +15,8 @@
       <div class="lang-img" v-else>
         <img src="" alt="no-flag">
       </div>
-      <div class="movie-rating" v-for="vote in roundedMovieVote()" :key="vote">
-        <i class="fa-solid fa-star"></i>
+      <div class="movie-rating">
+        <i class="fa-solid fa-star" v-for="vote in roundedMovieVote()" :key="vote"></i>
       </div>
     </div>  
   </div>

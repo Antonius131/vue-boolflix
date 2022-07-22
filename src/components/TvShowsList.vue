@@ -15,8 +15,8 @@
       <div class="lang-img" v-else>
         <img src="" alt="no-flag">
       </div>
-      <div class="show-rating" v-for="vote in roundedtvShowVote()" :key="vote">
-        <i class="fa-solid fa-star"></i>
+      <div class="show-rating" >
+        <i class="fa-solid fa-star" v-for="vote in roundedtvShowVote()" :key="vote"></i>
       </div>
     </div>
   </div>
@@ -53,6 +53,12 @@ export default {
     margin: 0.15rem;
     height: 420px;
 
+    &:hover {
+      .poster-caption {
+        display: block;
+      }
+    }
+
     .poster-img {
       height: 100%;
 
@@ -64,7 +70,7 @@ export default {
     }
 
     .poster-caption {
-      background-color: rgba(0,0,0,.85);
+      background-color: rgba(0,0,0,.72);
       position: absolute;
       top: 0;
       left: 0;
@@ -73,11 +79,18 @@ export default {
       padding: 1.25rem 1rem;
       color: #fff;
       font-weight: 300;
+      cursor: pointer;
       display: none;
-
 
       img {
         height: 12px;
+      }
+
+      .fa-solid.fa-star {
+        display: inline;
+        font-size: .75rem;
+        margin: 0 .10em;
+        color: rgb(255, 247, 0);
       }
     }
   }
