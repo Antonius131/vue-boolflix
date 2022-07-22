@@ -1,19 +1,21 @@
 <template>
    <main>
-      <MoviesList v-for="movie in movies" :key="movie.id"
-         :title = 'movie.title'
-         :originalTitle = 'movie.original_title'
-         :language = 'movie.original_language'
-         :vote = 'movie.vote_average'
-         :posterPath = 'movie.poster_path'
-      />
-      <TvShowsList v-for="show in tvShows" :key="show.id"
-         :showTitle = 'show.name'
-         :showOriginalTitle = 'show.original_name'
-         :showLanguage = 'show.original_language'
-         :showVote = 'show.vote_average'
-         :posterPath = 'show.poster_path'
-      />
+      <div id="wrapper">
+         <MoviesList v-for="movie in movies" :key="movie.id"
+            :title = 'movie.title'
+            :originalTitle = 'movie.original_title'
+            :language = 'movie.original_language'
+            :vote = 'movie.vote_average'
+            :posterPath = 'movie.poster_path'
+         />
+         <TvShowsList v-for="show in tvShows" :key="show.id"
+            :showTitle = 'show.name'
+            :showOriginalTitle = 'show.original_name'
+            :showLanguage = 'show.original_language'
+            :showVote = 'show.vote_average'
+            :posterPath = 'show.poster_path'
+         />
+      </div>
    </main>
 </template>
 
@@ -39,6 +41,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+   main {
+      height: calc(100vh - 60px);
+      background-color: #333;
+      padding: 2rem;
+      overflow: auto;
 
+      #wrapper {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-wrap: wrap;
+      }
+   }
 </style>

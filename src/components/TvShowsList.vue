@@ -46,6 +46,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  .card {
+    width: calc((100% / 6) - 0.3rem);
+    margin: 0.15rem;
+  }
 </style>

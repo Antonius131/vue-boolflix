@@ -25,6 +25,7 @@ export default {
 <style lang="scss">
    header {
       background-color: rgb(24, 24, 24);
+      height: 60px;
       padding: 1rem 4rem;
 
       nav {
