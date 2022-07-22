@@ -1,6 +1,7 @@
 <template>
   <div class="card">
     <ul>
+      <img :src="`${imgPath}/${imgDimension}${posterPath}`" alt="movie-poster">
       <li>{{ title }}</li>
       <li>{{ originalTitle }}</li>
       <div class="lang-img" v-if="language === 'it'">
@@ -25,11 +26,12 @@ export default {
     'title': String,
     'originalTitle': String,
     'language': String,
-    'vote': Number
+    'vote': Number,
+    'posterPath': String
   },
   data: function() {
     return {
-      imgPath: 'https://image.tmdb.org/t/p/',
+      imgPath: 'https://image.tmdb.org/t/p',
       imgDimension: 'w342'
     }
   }
@@ -37,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss">
-  img {
+  .lang-img img {
     height: 12px;
   }
 </style>

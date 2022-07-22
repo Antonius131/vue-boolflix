@@ -5,7 +5,7 @@
          :originalTitle = 'movie.original_title'
          :language = 'movie.original_language'
          :vote = 'movie.vote_average'
-         :imgPath = 'movie.poster_path'
+         :posterPath = 'movie.poster_path'
       />
       <TvShowsList v-for="show in tvShows" :key="show.id"
          :showTitle = 'show.name'
