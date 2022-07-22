@@ -44,13 +44,13 @@ export default {
 <style lang="scss">
    main {
       height: calc(100vh - 60px);
-      background-color: #333;
-      padding: 2rem;
+      background-color: rgb(30, 30, 30);
+      padding: 3rem 4rem;
       overflow: auto;
 
       #wrapper {
          display: flex;
-         justify-content: center;
+         justify-content: flex-start;
          align-items: center;
          flex-wrap: wrap;
       }

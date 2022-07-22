@@ -1,9 +1,11 @@
 <template>
   <div class="card">
-    <ul>
+    <div class="poster-img">
       <img :src="`${imgPath}/${imgDimension}${posterPath}`" alt="movie-poster">
-      <li>{{ title }}</li>
-      <li>{{ originalTitle }}</li>
+    </div>
+    <div class="poster-caption">
+      <h3>{{ title }}</h3>
+      <p>{{ originalTitle }}</p>
       <div class="lang-img" v-if="language === 'it'">
         <img src="../assets/img/it-flag.png" :alt="language">
       </div>
@@ -13,12 +15,10 @@
       <div class="lang-img" v-else>
         <img src="" alt="no-flag">
       </div>
-      <div class="movie-rating">
-        <li v-for="vote in roundedMovieVote()" :key="vote">
-          <i class="fa-solid fa-star"></i>
-        </li>
+      <div class="movie-rating" v-for="vote in roundedMovieVote()" :key="vote">
+        <i class="fa-solid fa-star"></i>
       </div>
-    </ul>
+    </div>  
   </div>
 </template>
 
@@ -50,7 +50,4 @@ export default {
 </script>
 
 <style lang="scss">
-  .lang-img img {
-    height: 12px;
-  }
 </style>
