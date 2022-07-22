@@ -26,6 +26,12 @@ export default {
     'originalTitle': String,
     'language': String,
     'vote': Number
+  },
+  data: function() {
+    return {
+      imgPath: 'https://image.tmdb.org/t/p/',
+      imgDimension: 'w342'
+    }
   }
 }
 </script>
