@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <MainHeader @search="getSearch"/>
+    <button @click="roundedVoteAverage">click</button>
     <MainContent 
       :movies="moviesList"
-      :tvShows="tvShowsList"/>
+      :tvShows="tvShowsList"
+    />
   </div>
 </template>
 
@@ -41,6 +43,22 @@ export default {
         this.tvShowsList = result.data.results;
         console.log(this.tvShowsList);
       })
+    },
+    roundedVoteAverage() {
+      const moviesList = this.moviesList;
+      const tvShowsList = this.tvShowsList;
+
+      for(let i = 0; i < moviesList.length; i++) {
+        const moviesVotes = moviesList[i].vote_average;
+        const roundedMoviesVotes = Math.round(moviesVotes / 2);
+        console.log(roundedMoviesVotes);
+      }
+
+      for(let i = 0; i < tvShowsList.length; i++) {
+        const tvShowsVotes = tvShowsList[i].vote_average;
+        const roundedTvShowsVotes = Math.round(tvShowsVotes / 2);
+        console.log(roundedTvShowsVotes);
+      }
     }
   }
 }
