@@ -12,6 +12,7 @@
          :showOriginalTitle = 'show.original_name'
          :showLanguage = 'show.original_language'
          :showVote = 'show.vote_average'
+         :posterPath = 'show.poster_path'
       />
    </main>
 </template>
