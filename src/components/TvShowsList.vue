@@ -1,6 +1,7 @@
 <template>
    <div class="card">
     <ul>
+      <img :src="`${imgPath}/${imgDimension}${posterPath}`" alt="show-poster">
       <li>{{ showTitle }}</li>
       <li>{{ showOriginalTitle }}</li>
       <div class="lang-img" v-if="showLanguage === 'it'">
@@ -19,12 +20,19 @@
 
 <script>
 export default {
-   props: {
+    props: {
       'showTitle': String,
       'showOriginalTitle': String,
       'showLanguage': String,
-      'showVote': Number
-   }
+      'showVote': Number,
+      'posterPath': String
+    },
+    data: function() {
+      return {
+        imgPath: 'https://image.tmdb.org/t/p',
+        imgDimension: 'w342'
+      }
+    }
 }
 </script>
 
