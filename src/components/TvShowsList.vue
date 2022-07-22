@@ -32,6 +32,13 @@ export default {
         imgPath: 'https://image.tmdb.org/t/p',
         imgDimension: 'w342'
       }
+    },
+    methods: {
+      roundedtvShowVote() {
+        const tvShowVote = this.showVote;
+        const roundedtvShowVote = Math.round(tvShowVote / 2);
+        console.log(roundedtvShowVote);
+      }
     }
 }
 </script>

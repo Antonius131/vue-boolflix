@@ -34,6 +34,13 @@ export default {
       imgPath: 'https://image.tmdb.org/t/p',
       imgDimension: 'w342'
     }
+  },
+  methods: {
+    roundedMovieVote() {
+        const movieVote = this.vote;
+        const roundedMovieVote = Math.round(movieVote / 2);
+        console.log(roundedMovieVote);
+    }
   }
 }
 </script>
