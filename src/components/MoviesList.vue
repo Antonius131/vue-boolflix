@@ -12,6 +12,14 @@
       <div class="movie-rating">
         <i class="fa-solid fa-star" v-for="vote in roundedMovieVote()" :key="vote"></i>
       </div>
+      <div class="cast-info">
+        <button @click="getCast()">show cast</button>
+        <ul>
+          <li>
+            actor name
+          </li>
+        </ul>
+      </div>
     </div>  
   </div>
 </template>
@@ -29,7 +37,8 @@ export default {
     'originalTitle': String,
     'language': String,
     'vote': Number,
-    'posterPath': String
+    'posterPath': String,
+    'id': Number
   },
   data: function() {
     return {
