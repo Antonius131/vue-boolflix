@@ -18,6 +18,7 @@
 
 <script>
 import CountryFlag from 'vue-country-flag';
+import axios from 'axios';
 
 export default {
   components: {
