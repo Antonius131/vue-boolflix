@@ -34,7 +34,10 @@ export default {
   data: function() {
     return {
       imgPath: 'https://image.tmdb.org/t/p',
-      imgDimension: 'w342'
+      imgDimension: 'w342',
+      apiKey: 'e575f76f59f9dd45a7033ae7e19eb74d',
+      apiUrl: 'https://api.themoviedb.org/3/movie/',
+      movieCast: []
     }
   },
   methods: {
