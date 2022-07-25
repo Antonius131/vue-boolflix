@@ -15,8 +15,8 @@
       <div class="cast-info">
         <button @click="getCast()">show cast</button>
         <ul>
-          <li v-for="(actor, index) in movieCast" :key="index">
-            {{ actor.name }}  
+          <li v-for="actor in movieCast" :key="actor">
+            {{ actor }}  
           </li>
         </ul>
       </div>
@@ -51,15 +51,17 @@ export default {
   },
   methods: {
     roundedMovieVote() {
-        const movieVote = this.vote;
-        const roundedMovieVote = Math.round(movieVote / 2);
+      const movieVote = this.vote;
+      const roundedMovieVote = Math.round(movieVote / 2);
 
-        return roundedMovieVote;
+      return roundedMovieVote;
     },
     getCast() {
       axios.get(`${this.apiUrl}${this.id}/credits?api_key=${this.apiKey}`)
       .then((result) => {
-        this.movieCast = result.data.cast;
+        for (let i = 0; i<5; i++) {
+          this.movieCast.push(result.data.cast[i].name);
+        }
       });
     }
   }

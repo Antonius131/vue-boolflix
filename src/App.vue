@@ -34,13 +34,11 @@ export default {
       axios.get(`${this.movieUrl}?api_key=${this.apiKey}&query=${queryValue}`)
       .then((result) => {
         this.moviesList = result.data.results;
-        console.log(this.moviesList);
       });
 
       axios.get(`${this.tvShowsUrl}?api_key=${this.apiKey}&query=${queryValue}`)
       .then((result) => {
         this.tvShowsList = result.data.results;
-        console.log(this.tvShowsList);
       })
     }
   }
